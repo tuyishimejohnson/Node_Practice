@@ -3,8 +3,6 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
-const str =
-  "mongodb+srv://johnsontuyishime:noe321@backenddb.47qrz.mongodb.net/?retryWrites=true&w=majority&appName=BackendDB";
 
 mongoose
   .connect(str)
