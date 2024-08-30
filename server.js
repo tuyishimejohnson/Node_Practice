@@ -28,4 +28,8 @@ app.get("/:id", (req, res) => {
   res.send(`We got the id ${req.params.id}`);
 });
 
+app.put()
+app.post()
+app.delete()
+
 app.listen(3000);
