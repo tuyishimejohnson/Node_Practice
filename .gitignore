@@ -1,4 +1,3 @@
-# Ignored files
-/node_modules
-
-env
+# ignore files
+node_modules
+.env
