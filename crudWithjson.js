@@ -27,7 +27,9 @@ myApp.get("/:id", (req, res) => {
       res.status(500).send("Server error");
     } else {
       let newData = JSON.parse(data);
-      let index = newData.find((item) => item.id === parseInt(req.params.id));
+      let index = newData.findIndex(
+        (item) => item.id === parseInt(req.params.id)
+      );
       res.send(index);
     }
   });
@@ -36,13 +38,13 @@ myApp.get("/:id", (req, res) => {
 // Post/Add data from a json file
 myApp.post("/", (req, res) => {
   const newObject = req.body;
-  fs.readFile("./data.json", "utf-8", (error, text) => {
+  fs.readFile("./data.json", "utf-8", (error, data) => {
     if (error) {
       console.log("Error while fetching", error);
     } else {
-      let data = JSON.parse(text);
-      data.push(newObject);
-      fs.writeFile("./data.json", JSON.stringify(data), (error) => {
+      let newItem = JSON.parse(data);
+      newItem.push(newObject);
+      fs.writeFile("./data.json", JSON.stringify(newItem), (error) => {
         if (error) {
           res.status(500).send("Error occured");
         } else {
