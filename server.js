@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const Product = require("./models/newProduct");
+const Product = require("./models/newItems");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 const productControllers = require("./controllers/handleControls");
@@ -35,8 +35,8 @@ mongoose
 
 app.listen(3000, () => console.log("connected to the port 3000"));
 
-app.get("/products", productControllers.handleGetProducts);
-app.get("/products/:id", productControllers.getProductsByID);
-app.post("/products", productControllers.postProducts);
-app.put("/products/:id", productControllers.updateProducts);
-app.delete("/products/:id", productControllers.deleteProductById);
+app.get("/items", productControllers.handleGetItems);
+app.get("/items/:id", productControllers.getItemsByID);
+app.post("/items", productControllers.postItems);
+app.put("/items/:id", productControllers.updateItems);
+app.delete("/items/:id", productControllers.deleteItemById);
