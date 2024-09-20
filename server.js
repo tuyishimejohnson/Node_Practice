@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const Product = require("./models/newItems");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 const productControllers = require("./controllers/handleControls");
