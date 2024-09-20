@@ -4,15 +4,23 @@ const mongoose = require("mongoose");
 const Product = require("./models/newProduct");
 const bodyParser = require("body-parser");
 require("dotenv").config();
-const route = express.Router();
 const productControllers = require("./controllers/handleControls");
 /* const EventEmitter = require("events");
-const emitter = new EventEmitter(); */
-/* 
-emitter.on("messageLogged", () => {
+const emitter = new EventEmitter();
+
+emitter.on("writeMessage", () => {
   console.log("Message logged successfully");
 });
-emitter.emit("messageLogged"); */
+
+emitter.on("error", (error) => console.error("Error occured", error))
+emitter.emit("error", new Error("This is an error occured"))
+
+
+
+emitter.addListener("writeMessage", (name) => {
+  console.log(`${name}, write a message for them`)
+})
+emitter.emit("writeMessage", "Johnson"); */
 
 app.set("view engine", "ejs");
 app.use(bodyParser.json());
