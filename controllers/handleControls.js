@@ -22,7 +22,7 @@ const getItemsByID = async (req, res) => {
 const postItems = async (req, res) => {
   try {
     const savedItem = await Item.create(req.body);
-    res.status(200).json(savedItem);
+    res.status(201).json(savedItem);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
